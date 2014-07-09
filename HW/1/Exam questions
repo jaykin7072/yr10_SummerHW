@@ -1,0 +1,149 @@
+Done on a different file as I'm not sure how to edit the thingy... Also I tidied up quite a few of the mistakes and made it much more attractive and easier to understand.
+
+
+Data Representation
+
+1 - Why do we represent data using binary when using computers? (1 mark)
+
+Binary is the only language that computers can understand.
+
+2 - How would we represent the number 147 in binary? (1 mark)
+
+128 	64	 32	 16	 8	 4 	2	 1
+1 	0	 0	 1	 0	 0	1 	 1
+
+10010011
+
+3 - Can you convert the hexadecimal number b5 to denary, there is a mark for your working. (2 marks)
+
+16	1
+b(11)	5
+_______
+176	5	= 181
+
+4 - Here is a function written in pseudocode.
+
+FUNCTION validUser (users , user)
+    FOR x <-1 to LEN(users)
+        IF users[x] = user
+            RETURN True
+        ENDIF
+    ENDFOR
+    RETURN False
+ENDFUNCTION
+
+(a) What type of data is users? (1 mark)
+
+List
+
+(b) What type of data is returned by this function? (1 mark)
+
+Boolean
+
+Errors
+
+6 - This program is supposed to find the mean of a list of numbers and print it out for the user:
+
+line1:      tot <- 0
+line2:      nums <- [1,6,4,2,5,3]
+line3:      FOR x <- to LEN(nums)
+line4:          tot <- nums[x]
+line5:      ENDFOR
+line6:      mean <- tot
+line7:      OUTPT mean
+(a) On which line is there a syntax error? (1 mark)
+
+Line 7, OUTPT should be OUTPUT
+
+(b) What is meant by a syntax error? (1 mark)
+
+A fatal error where the computer does not understand what the user is trying to tell it.
+
+(c) Identify a logical error in the program and suggest how this might be fixed. (2 marks)
+
+Line 4, 'tot<-nums[x]' will only set total to the number present in num. At the end of the program tot wuld have the last value in the list. The way to fix this would be to add the previous total to the new calculation. Tot<-nums[x]+tot
+
+(d) Describe and give an example of the 3rd kind of programming error. (2 marks)
+
+Runtime error. A runtime error is not like a syntax error in the fact that a syntax error will crash the code the moment it is run. A runtime error will crash when a certain part of the code is run.
+The following is written in python.
+
+Line 1: import time
+Line 2: print(“Hi, I'm wasting time to show that it doesn't crash on code startup.”)
+Line 3: time.sleep(2)
+Line 4: crashtime=1/0
+Line 5: print(crashtime)
+
+This code will crash with a runtime error ZeroDivisionError after two seconds and at line 4, as dividing by 0 is impossible.
+
+Algorithms
+
+7 - Write an algorithm that if given a list of numbers could find the largest. Try to use pseudocode.
+
+Listfinished<-False
+numlist<-[]
+WHILE listfinished<-False
+	INPUT newnum
+	IF newnum<-0
+		listfinished<-True
+	ELSE
+		ADDTOLIST(numlist)<-newnum
+	END IF
+END WHILE
+newnum<-0
+FOR x <- to LEN(numlist)
+	IF newnum<numlist[x]
+		newnum<-numlist[x]
+OUTPUT newnum
+
+Networking
+
+8 - Research the following methods (topologies) for connecting devices to a network. In each case give a description and at least 1 advantage and 1 disadvantage.
+
+Bus Topology (6 marks)
+
+Describe: Simplest topology, all the nodes are connected to the single cable (bus) by the help of interface connectors. Every workstation communicates with the other device through this bus. Only the intended recipient will be accepted as the computer discards all other devices with an incorrect IP address.
+
+Advantages: Easy to set up & extend
+Least cable length required.
+Least costly.
+Good for LAN.
+
+Disadvantages: Limited cable length & nodes.
+If the bus encounters a problem the whole network breaks down.
+Termination is required to dump signals.
+Difficult to detect & troubleshoot fault at individual station.
+Costs can increase with time.
+Efficiency reduces as connected devices increases.
+Not suitable for networks with heavy traffic.
+
+
+Ring Topology (6 marks)
+
+Describe: In Ring Topology, all the nodes are connected to each-other in such a way that they make a closed loop. Each workstation is connected to two other components on either side, and it communicates with these two adjacent neighbors. Data travels around the network, in one direction. Sending and receiving of data takes place by the help of TOKEN.
+
+Advantages: Very organised.
+Better performance than Bus topology.
+No need for network server to control connectivity between workstations.
+Additional components do not affect the performance of the network.
+Each computer has equal access to resources.
+
+Disadvantages: Slower than Star topology.
+If one workstation or port goes down the entire network is affected.
+Network is highly dependant on the wire which connects different components.
+Expensive compared to Ethernet cards and hubs.
+
+
+Star Topology (6 marks)
+
+Describe: In Star topology, all the components of network are connected to the central device called “hub” which may be a hub, a router or a switch. Unlike Bus topology, where nodes were connected to central cable, here all the workstations are connected to central device with a point-to-point connection. So it can be said that every computer is indirectly connected to every other node by the help of “hub”. 
+
+Advantages: Much better performance than Bus topology.
+Easy to connect new nodes or devices.
+Centralized management.
+Failure of one node or link doesn't affect the rest of the network.
+Easy to detect problems & troubleshoot.
+
+Disadvantages: If the central device fails the whole network goes down.
+The use of a hub increases overall cost of network.
+Performance and amount of nodes that can be connected is dependant on capacity of central device.
